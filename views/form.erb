@@ -1,0 +1,26 @@
+<h2>Записаться</h2>
+<p>На этой странице Вы можете записаться к нам.</p>
+
+<form action="/form" method="POST">
+    <div class="form-group">
+      <label>Ваше имя</label>
+      <input name="username" type="text" class="form-control" placeholder="Введите Ваше имя">
+    </div>
+
+    <div class="form-group">
+      <label>Номер телефона</label>
+      <input name="phonenumber" type="text" class="form-control" placeholder="Телефон">
+    </div>
+
+    <div class="form-group">
+      <label>Выберите модель собаки</label>
+      <select name="dog_type" class="form-control">
+	        <option>Прикольная собачка</option>
+	        <option>Собака-урод</option>
+	        <option>Большая собака</option>
+	        <option>Нахуй так жить</option>
+      </select>
+    </div>
+
+    <button type="submit" class="btn btn-primary">Да, побрейте ее!</button>
+</form>
