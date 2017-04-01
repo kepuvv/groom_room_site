@@ -26,10 +26,31 @@ end
 hh = {'admin' => '123456', 'user' => '123'}
 
 post '/form' do
+
+	@username = params[:username]
+	@phone = params[:phonenumber]
+	@date = params[:datetime]
+	@barber_id = params[:barber_id]
+
+	hh = { 	:username => 'Введите имя', 
+			:phonenumber => 'Введите телефон', 
+			:datetime => 'Выберите дату' }
+
+	# для каждой пары ключ-значение 
+	hh.each do |key, value|
+
+		if params[key] == ''
+			@error = value
+
+			return erb :form 
+		end 
+	end
+
 	file = File.open './public/users.txt', 'a'
-	file.write "Имя: #{params[:username]}, телефон: #{params[:phonenumber]}, модель собакена: #{params[:dog_type]}\n"
+	file.write "Имя: #{params[:username]}, телефон: #{params[:phonenumber]}, модель собакена: #{params[:dog_type]}, грумер: #{@barber_id}\n"
 	file.close
-	erb "Ok, #{params[:username]}, где там ваша #{params[:dog_type]}"
+
+	erb "Ok, #{params[:username]}, где там ваша #{params[:dog_type]}, приводите #{@date}"
 end
 
 post '/secret' do
@@ -42,7 +63,7 @@ post '/secret' do
 	elsif hh[name] && password == hh[name] && params[:login] != 'admin'
 		erb "You are just user"
 	else
-		@str = 'Acces denied!'
+		@error = 'Acces denied!'
 		erb :secret
 	end 
 end
