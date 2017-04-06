@@ -1,6 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title></title>
+</head>
+<body>
+  <h2>Записаться</h2>
+  <p>На этой странице Вы можете записаться к нам.</p>
 
-<h2>Записаться</h2>
-<p>На этой странице Вы можете записаться к нам.</p>
+  <script type="text/javascript">
+  $(function () {
+    //Идентификатор элемента HTML (например: #datetimepicker1), для которого необходимо инициализировать виджет "Bootstrap datetimepicker"
+    $('#datetimepicker').datetimepicker(
+      {language: 'ru', useMinutes: false}
+      );
+    
+  });
+  </script>
 
 <form action="/form" method="POST">
     <div class="form-group">
@@ -15,8 +30,8 @@
 
     <div class="form-group">
     <label>Когда вас ждать?</label>
-    <input name="datetime" type="text" class="form-control" value="<%=@date%>" placeholder="Введите дату и время">
-  </div>
+      <input id="datetimepicker" name="datetime" type="text" class="form-control" value="<%=@date%>" placeholder="  Введите дату и время">
+    </div> 
   
   <div class="form-group">
     <label>Выберите грумера</label>
@@ -30,13 +45,15 @@
     <div class="form-group">
       <label>Выберите модель собаки</label>
       <select name="dog_type" class="form-control">
-	        <option>Прикольная собачка</option>
-	        <option>Собака-урод</option>
-	        <option>Большая собака</option>
-	        <option>Нахуй так жить</option>
+          <option>Прикольная собачка</option>
+          <option>Собака-урод</option>
+          <option>Большая собака</option>
+          <option>Нахуй так жить</option>
       </select>
     </div>
 
     <button type="submit" class="btn btn-primary">Да, побрейте ее!</button>
 </form>
 
+</body>
+</html>
