@@ -1,20 +1,19 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title></title>
+  <title>Форма для записи</title>
 </head>
 <body>
   <h2>Записаться</h2>
-  <p>На этой странице Вы можете записаться к нам.</p>
+  <p>На этой странице Вы можете записаться к нам</p>
 
   <script type="text/javascript">
-  $(function () {
-    //Идентификатор элемента HTML (например: #datetimepicker1), для которого необходимо инициализировать виджет "Bootstrap datetimepicker"
-    $('#datetimepicker').datetimepicker(
-      {language: 'ru', useMinutes: false}
-      );
-    
-  });
+    $(function () {
+      //Идентификатор элемента HTML (например: #datetimepicker1), для которого необходимо инициализировать виджет "Bootstrap datetimepicker"
+      $('#datetimepicker').datetimepicker(
+          {language: 'ru', useMinutes: false}
+          );   
+        });
   </script>
 
 <form action="/form" method="POST">
@@ -42,7 +41,7 @@
     </select>
   </div>
 
-    <div class="form-group">
+  <div class="form-group">
       <label>Выберите модель собаки</label>
       <select name="dog_type" class="form-control">
           <option>Прикольная собачка</option>
@@ -50,9 +49,9 @@
           <option>Большая собака</option>
           <option>Нахуй так жить</option>
       </select>
-    </div>
+  </div>
 
-    <button type="submit" class="btn btn-primary">Да, побрейте ее!</button>
+  <button type="submit" class="btn btn-primary">Да, побрейте ее!</button>
 </form>
 
 </body>

@@ -23,8 +23,6 @@ get '/contacts' do
 	erb :contacts
 end
 
-hh = {'admin' => '123456', 'user' => '123'}
-
 post '/form' do
 
 	@username = params[:username]
@@ -52,6 +50,8 @@ post '/form' do
 
 	erb "Ok, #{params[:username]}, где там ваша #{params[:dog_type]}, приводите #{@date}"
 end
+
+hh = {'admin' => '123456', 'user' => '123'}
 
 post '/secret' do
 	name = params[:login]
