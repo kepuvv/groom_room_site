@@ -10,13 +10,19 @@
   <script type="text/javascript">
     $(function() {
       //Идентификатор элемента HTML (например: #datetimepicker1), для которого необходимо инициализировать виджет "Bootstrap datetimepicker"
-      $('#datetimepicker').datetimepicker(
-          {language: 'ru', 
-          daysOfWeekDisabled:[0,6],
-          sideBySide: true,
-          minDate: moment()
-          });   
-        });
+      // $('#datetimepicker').datetimepicker(
+      //     {language: 'ru', 
+      //     daysOfWeekDisabled:[0,6],
+      //     sideBySide: true,
+      //     minDate: moment()
+      //     });   
+      //   });
+      // Другой таймпикер (из уроков)
+      $('#datetimepicker').datetimepicker({
+          format:'d.m.Y H:i',
+          minDate: '0'
+          })
+    });
   </script>
 
 <form action="/form" method="POST">
